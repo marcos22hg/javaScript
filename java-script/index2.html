@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interagindo com usúario</title>
+    <style>
+        button {
+            padding: 20px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>interagindo com usuário</h1>
+    <button onclick="inicio()"> Comece AQUI!</button>
+
+    <script>
+        function inicio() {
+            let nome = window.prompt('qual o seu nome?');
+            window.alert(`olá, ${nome}! seja bem-vindo!`);
+        }
+    </script>
+    
+</body>
+</html>
