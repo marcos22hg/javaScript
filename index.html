@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Distância</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            max-width: 400px;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        pre {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Conversor de Distância</h1>
+
+    <button onclick="converterDistancia()">Converter Distância</button>
+
+    <section id="resultado">
+        <!-- Resultado aparecerá aqui -->
+    </section>
+
+    <script>
+        function converterDistancia() {
+            const entrada = prompt("Digite a distância em metros:");
+            const metros = parseFloat(entrada);
+
+            if (isNaN(metros)) {
+                alert("Por favor, digite um número válido.");
+                return;
+            }
+
+            const km = metros / 1000;
+            const hm = metros / 100;
+            const dam = metros / 10;
+            const dm = metros * 10;
+            const cm = metros * 100;
+            const mm = metros * 1000;
+
+            const resultadoTexto = `
+A distância de ${metros} metro(s) corresponde a:
+
+${km} km
+${hm} hm
+${dam} dam
+${dm} dm
+${cm} cm
+${mm} mm`;
+
+            // Mostra na seção do HTML
+            document.getElementById("resultado").innerHTML = `
+                <h2>Resultado</h2>
+                <pre>${resultadoTexto}</pre>
+            `;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de Temperatura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Conversor de Temperatura</h2>
+  <button onclick="converterTemperatura()">Converter Temperatura</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function converterTemperatura() {
+      const entrada = prompt("Digite a temperatura em graus Celsius (°C):");
+
+      // Verifica se a entrada é válida
+      if (entrada === null) return; // Usuário cancelou
+
+      const celsius = parseFloat(entrada);
+
+      if (isNaN(celsius)) {
+        document.getElementById("resultado").innerHTML = "Por favor, digite um número válido.";
+        return;
+      }
+
+      const kelvin = celsius + 273.15;
+      const fahrenheit = (celsius * 9/5) + 32;
+
+      // Exibe o resultado na página
+      document.getElementById("resultado").innerHTML = `
+        <p><strong>Celsius:</strong> ${celsius.toFixed(2)} °C</p>
+        <p><strong>Kelvin:</strong> ${kelvin.toFixed(2)} K</p>
+        <p><strong>Fahrenheit:</strong> ${fahrenheit.toFixed(2)} °F</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
