@@ -1,81 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Conversor de Distância</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 40px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        section {
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            max-width: 400px;
-            background-color: #f9f9f9;
-        }
-
-        h2 {
-            margin-top: 0;
-        }
-
-        pre {
-            font-size: 16px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
 <body>
+    <div class="container">
+        <h1>Adivinhe o número:</h1>
+        <p>tente adivinhar o número que estou pensando entre 1 e 100</p>
+        <p>Você tem <span id="chancesRestantes">10</span> chances</p>
 
-    <h1>Conversor de Distância</h1>
+        <div class="input-area">
+            <label for="campoPalpite">Digite seu palpite</label>
+        <input type="number" id="campopalpite" min="1" max="100">
+        <button id="botaoEnviar">Enviar palpite</button>
+        </div>
 
-    <button onclick="converterDistancia()">Converter Distância</button>
+    <div class="resultado-area">
+        <p class="mensagem"></p>
+        <p class="palpites-anteriores"></p>
+        <p class="resultado"></p>
 
-    <section id="resultado">
-        <!-- Resultado aparecerá aqui -->
-    </section>
+    </div>
 
-    <script>
-        function converterDistancia() {
-            const entrada = prompt("Digite a distância em metros:");
-            const metros = parseFloat(entrada);
+    <button id="botaoReiniciar" class="hidden">Reiniciar</button>
+    <div>
 
-            if (isNaN(metros)) {
-                alert("Por favor, digite um número válido.");
-                return;
-            }
-
-            const km = metros / 1000;
-            const hm = metros / 100;
-            const dam = metros / 10;
-            const dm = metros * 10;
-            const cm = metros * 100;
-            const mm = metros * 1000;
-
-            const resultadoTexto = `
-A distância de ${metros} metro(s) corresponde a:
-
-${km} km
-${hm} hm
-${dam} dam
-${dm} dm
-${cm} cm
-${mm} mm`;
-
-            // Mostra na seção do HTML
-            document.getElementById("resultado").innerHTML = `
-                <h2>Resultado</h2>
-                <pre>${resultadoTexto}</pre>
-            `;
-        }
-    </script>
-
+        <script src="script.js" defer></script>
 </body>
+
 </html>
+
+</div>
